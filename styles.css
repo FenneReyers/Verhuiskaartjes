@@ -1,0 +1,101 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
+  background-color: #222222;
+}
+
+.Card {
+  position: relative;
+  width: 250px;
+  height:350px;
+  transform-style: preserve-3d;
+	transform: perspective(2500px);
+  transition: 4s;
+}
+
+.Card:hover {
+	transform: perspective(2500px);
+	box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 0 10px 100px rgba(0,0,0,0.3);
+}
+
+.Card:hover .cardFront {
+  transform: rotateY(-160deg); 
+  z-index: -4;
+}
+
+.Card:hover #koperhorst {
+  display: none;
+}
+
+.cardFront {
+  position: relative;
+  background-color: #fff;
+  width: 250px;
+  height:350px;
+  overflow: hidden;
+  transform-origin: left;
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+  transition: .4s;
+}
+
+#koperhorst {
+    position: relative;
+    width: 250px;
+    height: 350px;
+}
+
+.Card:hover .cardInside-right {
+  transform: rotateY(-160deg); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  width: 250px;
+}
+
+.cardInside-right img {
+    width: 200px;
+    margin: 7px;
+}
+
+.cardInside-left {
+  position: absolute;
+  background-color: #fff;
+  width: 250px;
+  height:350px;
+  z-index:-1;
+  left:0;
+  top:0;
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
+}
+
+.inside-text {
+  position: relative;
+  height: 350px;
+  top: 0;
+  transform: scale(0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+h2 {
+    text-align: left;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+h3 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+}
